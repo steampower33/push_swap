@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:39 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/11 19:35:04 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/11 19:36:19 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,10 +112,11 @@ int	main(int argc, char **argv)
 	ft_chk_arg(ps);
 	ft_set_stack(ps);
 	p(ps->a);
-	t_node *s = ft_deque(ps->a, FRONT);
-	printf("deque => %d\n", s->data);
+	ft_swap(ps->a);
 	p(ps->a);
-	ft_enque(ps->a, FRONT, s);
+	ft_swap(ps->a);
+	p(ps->a);
+	ft_swap(ps->a);
 	p(ps->a);
 	return (0);
 }
