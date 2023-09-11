@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:39 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/11 18:15:40 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/11 19:35:04 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,25 @@ void	ft_chk_arg(t_ps *ps)
 			idx2++;
 		}
 		if (idx == 0 && cnt == ps->arg_cnt)
-			ft_error(1);
+			exit(0);
 		idx++;
 	}
+}
+
+void	p(t_stack *s)
+{
+	unsigned int	idx;
+	t_node			*n;
+
+	idx = 0;
+	n = s->top;
+	while (idx < s->cnt)
+	{
+		printf("%d ", n->data);
+		n = n->next;
+		idx++;
+	}
+	printf("\n");
 }
 
 int	main(int argc, char **argv)
@@ -95,14 +111,11 @@ int	main(int argc, char **argv)
 	ft_split_arg(argc, argv, ps);
 	ft_chk_arg(ps);
 	ft_set_stack(ps);
-	unsigned int idx = 0;
-	t_node *a = ps->a->top;
-	while (idx < ps->arg_cnt)
-	{
-		printf("%d ", a->data);
-		a = a->next;
-		idx++;
-	}
-	printf("\n");
+	p(ps->a);
+	t_node *s = ft_deque(ps->a, FRONT);
+	printf("deque => %d\n", s->data);
+	p(ps->a);
+	ft_enque(ps->a, FRONT, s);
+	p(ps->a);
 	return (0);
 }

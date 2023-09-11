@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:00:03 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/11 17:38:06 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/11 19:34:28 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	ft_set_stack(t_ps *ps)
 	t_stack			*a;
 	t_node			*n;
 
+	ps->a->cnt = ps->arg_cnt;
 	a = ps->a;
 	a->top = (t_node *)malloc(sizeof(t_node));
 	a->top->data = ps->arg[0];
@@ -48,4 +49,50 @@ void	ft_set_stack(t_ps *ps)
 		}
 		idx++;
 	}
+}
+
+t_node	*ft_deque(t_stack *st, enum e_where w)
+{
+	t_node	*s;
+
+	s = NULL;
+	if (w == FRONT)
+	{
+		s = st->top;
+		st->top->next->prev = st->bottom;
+		st->top = st->top->next;
+		s->prev = NULL;
+		s->next = NULL;
+	}
+	else if (w == BACK)
+	{
+		s = st->bottom;
+		st->bottom->prev->next = st->top;
+		st->bottom = st->bottom->prev;
+		s->prev = NULL;
+		s->next = NULL;
+	}
+	st->cnt--;
+	return (s);
+}
+
+void	ft_enque(t_stack *st, enum e_where w, t_node *node)
+{
+	if (w == FRONT)
+	{
+		node->next = st->top;
+		node->prev = st->bottom;
+		st->top->prev = node;
+		st->bottom->next = node;
+		st->top = node;
+	}
+	else if (w == BACK)
+	{
+		node->next = st->top;
+		node->prev = st->bottom;
+		st->bottom->next = node;
+		st->top->prev = node;
+		st->bottom = node;
+	}
+	st->cnt++;
 }
