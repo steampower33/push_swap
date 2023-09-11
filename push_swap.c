@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:39 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/11 17:52:25 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/11 18:15:40 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,24 @@ void	ft_cnt_num(int argc, char **argv, t_ps *ps)
 void	ft_chk_arg(t_ps *ps)
 {
 	unsigned int	idx;
+	unsigned int	idx2;
+	unsigned int	cnt;
 
+	cnt = 1;
 	idx = 0;
 	while (idx < ps->arg_cnt)
 	{
+		idx2 = idx + 1;
+		while (idx2 < ps->arg_cnt)
+		{
+			if (ps->arg[idx] == ps->arg[idx2])
+				ft_error(1);
+			if (idx == 0 && ps->arg[idx2 - 1] < ps->arg[idx2])
+				cnt++;
+			idx2++;
+		}
+		if (idx == 0 && cnt == ps->arg_cnt)
+			ft_error(1);
 		idx++;
 	}
 }
@@ -82,12 +96,13 @@ int	main(int argc, char **argv)
 	ft_chk_arg(ps);
 	ft_set_stack(ps);
 	unsigned int idx = 0;
-	t_node *a = ps->a->bottom;
+	t_node *a = ps->a->top;
 	while (idx < ps->arg_cnt)
 	{
 		printf("%d ", a->data);
-		a = a->prev;
+		a = a->next;
 		idx++;
 	}
+	printf("\n");
 	return (0);
 }
