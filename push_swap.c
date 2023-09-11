@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:39 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/11 14:16:23 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/11 17:52:25 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ t_ps	*ft_init(void)
 	ps = (t_ps *)malloc(sizeof(t_ps));
 	if (!ps)
 		ft_error(1);
-	ps->s_a = (t_l *)malloc(sizeof(t_l));
-	ps->s_b = NULL;
+	ps->a = (t_stack *)malloc(sizeof(t_stack));
+	ps->b = (t_stack *)malloc(sizeof(t_stack));
+	if (!ps->a || !ps->b)
+		ft_error(1);
 	ps->arg_cnt = 0;
 	return (ps);
 }
@@ -57,6 +59,17 @@ void	ft_cnt_num(int argc, char **argv, t_ps *ps)
 	}
 }
 
+void	ft_chk_arg(t_ps *ps)
+{
+	unsigned int	idx;
+
+	idx = 0;
+	while (idx < ps->arg_cnt)
+	{
+		idx++;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_ps	*ps;
@@ -66,14 +79,14 @@ int	main(int argc, char **argv)
 	if (ps->arg_cnt <= 1)
 		ft_error(1);
 	ft_split_arg(argc, argv, ps);
-	ft_set_list(ps);
-	t_l *a;
-	int idx = 0;
-	a = ps->s_a;
-	while (a)
+	ft_chk_arg(ps);
+	ft_set_stack(ps);
+	unsigned int idx = 0;
+	t_node *a = ps->a->bottom;
+	while (idx < ps->arg_cnt)
 	{
 		printf("%d ", a->data);
-		a = a->next;
+		a = a->prev;
 		idx++;
 	}
 	return (0);
