@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:00:03 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/11 19:34:28 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/12 13:58:31 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,21 +56,23 @@ t_node	*ft_deque(t_stack *st, enum e_where w)
 	t_node	*s;
 
 	s = NULL;
-	if (w == FRONT)
+	if (st->cnt == 1)
+	{
+		s = st->top;
+		st->top->next = NULL;
+		st->top->prev = NULL;
+	}
+	else if (w == FRONT)
 	{
 		s = st->top;
 		st->top->next->prev = st->bottom;
 		st->top = st->top->next;
-		s->prev = NULL;
-		s->next = NULL;
 	}
 	else if (w == BACK)
 	{
 		s = st->bottom;
 		st->bottom->prev->next = st->top;
 		st->bottom = st->bottom->prev;
-		s->prev = NULL;
-		s->next = NULL;
 	}
 	st->cnt--;
 	return (s);
@@ -78,7 +80,12 @@ t_node	*ft_deque(t_stack *st, enum e_where w)
 
 void	ft_enque(t_stack *st, enum e_where w, t_node *node)
 {
-	if (w == FRONT)
+	if (st->cnt == 0)
+	{
+		st->top = node;
+		st->bottom = node;
+	}
+	else if (w == FRONT)
 	{
 		node->next = st->top;
 		node->prev = st->bottom;

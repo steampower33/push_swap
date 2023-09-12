@@ -5,39 +5,29 @@
 #                                                     +:+ +:+         +:+      #
 #    By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/29 17:31:22 by seunlee2          #+#    #+#              #
-#    Updated: 2023/09/12 14:53:16 by seunlee2         ###   ########.fr        #
+#    Created: 2023/03/27 17:02:34 by seunlee2          #+#    #+#              #
+#    Updated: 2023/08/28 12:24:20 by seunlee2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
-SRCS = push_swap.c ft_error.c ft_atoll.c ft_split_arg.c ft_stack.c ft_cmd.c ft_utils.c
-OBJS = $(SRCS:.c=.o)
+NAME = libftprintf.a
+SRCS = ft_printf.c ft_printf_util.c ft_putnbr.c
+OBJECTS = $(SRCS:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-LIBFT = libft
-PRINTF = printf
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I $(LIBFT) -o $@ -c $<
+	$(CC) $(CFLAGS) -o $@ -c $<
 
-$(NAME): $(OBJS)
-	$(MAKE) -C $(LIBFT)
-	$(MAKE) -C $(PRINTF)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) \
-		-L./$(LIBFT) $(LIBFT)/libft.a \
-		-L./$(PRINTF) $(PRINTF)/libftprintf.a
+$(NAME): $(OBJECTS)
+	ar -rcs $@ $^
 
 all: $(NAME)
 
-clean:
-	$(MAKE) -C $(LIBFT) clean
-	$(MAKE) -C $(PRINTF) clean
-	rm -f $(OBJS)
+clean: 
+	rm -f $(OBJECTS)
 
 fclean: clean
-	$(MAKE) -C $(LIBFT) fclean
-	$(MAKE) -C $(PRINTF) fclean
 	rm -f $(NAME)
 
 re:

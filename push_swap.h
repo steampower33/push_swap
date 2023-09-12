@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:55 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/12 11:00:01 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/12 14:53:07 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include <stdio.h>
+# include "printf/ft_printf.h"
 
 typedef struct s_node {
 	int				data;
@@ -52,6 +52,10 @@ t_node		*ft_deque(t_stack *st, enum e_where w);
 void		ft_enque(t_stack *st, enum e_where w, t_node *node);
 
 t_ps		*ft_init(void);
+void		ft_sort(t_ps *ps);
+void		ft_div_three(t_ps *ps);
+void		ft_div_three_cmd(t_ps *ps, int p1, int p2);
+
 void		ft_free_arr2(char **str);
 void		ft_cnt_num(int argc, char **argv, t_ps *ps);
 void		ft_chk_arg(t_ps *ps);
