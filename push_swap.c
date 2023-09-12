@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:39 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/11 19:36:19 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:01:20 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,11 +112,7 @@ int	main(int argc, char **argv)
 	ft_chk_arg(ps);
 	ft_set_stack(ps);
 	p(ps->a);
-	ft_swap(ps->a);
-	p(ps->a);
-	ft_swap(ps->a);
-	p(ps->a);
-	ft_swap(ps->a);
+	ft_rotate(ps->a, BACK);
 	p(ps->a);
 	return (0);
 }

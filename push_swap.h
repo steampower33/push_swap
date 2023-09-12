@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:55 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/11 19:11:31 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:00:01 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,7 @@ void		ft_cnt_num(int argc, char **argv, t_ps *ps);
 void		ft_chk_arg(t_ps *ps);
 
 void		ft_swap(t_stack *st);
+void		ft_push(t_stack *from, t_stack *to);
+void		ft_rotate(t_stack *stack, enum e_where w);
 
 #endif
