@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:55 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/12 15:22:29 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/13 18:27:34 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ t_ps		*ft_init(void);
 
 void		ft_div_three_cmd(t_ps *ps, int p1, int p2);
 void		ft_div_three(t_ps *ps);
+
+void		ft_sort_three(t_ps *ps);
 void		ft_sort(t_ps *ps);
 
 void		ft_free_arr2(char **str);
