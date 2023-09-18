@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:21:58 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/13 19:07:50 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/18 18:05:04 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ void	ft_sort_three(t_ps *ps)
 
 void	ft_sort(t_ps *ps)
 {
-	// ft_div_three(ps);
+	int	a;
+	int	b;
+
+	ft_div_three(ps);
 	while (ps->a->cnt > 3)
 		ft_cmd_center(ps, "pb");
 	if (ps->a->cnt == 2)
@@ -51,4 +54,14 @@ void	ft_sort(t_ps *ps)
 	}
 	if (ps->a->cnt == 3)
 		ft_sort_three(ps);
+	while (ps->b->cnt)
+	{
+		a = 0;
+		b = 0;
+		ft_get_ab(ps, &a, &b);
+		ft_rr_rrr(ps, &a, &b);
+		ft_ra_rra(ps, a);
+		ft_rb_rrb(ps, b);
+		ft_cmd_center(ps, "pa");
+	}
 }

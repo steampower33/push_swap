@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:39 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/12 17:05:00 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/18 18:04:15 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ t_ps	*ft_init(void)
 
 void	p(t_stack *s)
 {
-	unsigned int	idx;
-	t_node			*n;
+	int		idx;
+	t_node	*n;
 
 	idx = 0;
 	n = s->top;

@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:55 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/13 18:27:34 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:45:58 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_node {
 }	t_node;
 
 typedef struct s_stack {
-	unsigned int	cnt;
+	int				cnt;
 	struct s_node	*top;
 	struct s_node	*bottom;
 }	t_stack;
@@ -32,7 +32,7 @@ typedef struct s_ps {
 	struct s_stack	*a;
 	struct s_stack	*b;
 	int				*arg;
-	unsigned int	arg_cnt;	
+	int				arg_cnt;
 }	t_ps;
 
 enum e_where
@@ -59,6 +59,16 @@ void		ft_div_three(t_ps *ps);
 void		ft_sort_three(t_ps *ps);
 void		ft_sort(t_ps *ps);
 
+int			ft_set_a(t_ps *ps, int data_b);
+int			ft_bigger(int a, int b, int idx_a, int idx_b);
+void		ft_get_ab(t_ps *ps, int *a, int *b);
+
+int			ft_stack_min(t_stack *a);
+int			ft_set_min_prev(t_ps *ps);
+int			ft_stack_max(t_stack *a);
+int			ft_set_max_next(t_ps *ps);
+int			ft_set_middle(t_ps *ps, int data_b);
+
 void		ft_free_arr2(char **str);
 void		ft_cnt_num(int argc, char **argv, t_ps *ps);
 void		ft_chk_arg(t_ps *ps);
@@ -68,5 +78,9 @@ void		ft_push(t_stack *from, t_stack *to);
 void		ft_rotate(t_stack *stack, enum e_where w);
 
 void		ft_cmd_center(t_ps *ps, char *cmd);
+
+void		ft_rr_rrr(t_ps *ps, int *a, int *b);
+void		ft_ra_rra(t_ps *ps, int a);
+void		ft_rb_rrb(t_ps *ps, int b);
 
 #endif

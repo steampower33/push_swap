@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 12:09:59 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/12 12:10:43 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/18 16:46:58 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void	ft_cnt_num(int argc, char **argv, t_ps *ps)
 
 void	ft_chk_arg(t_ps *ps)
 {
-	unsigned int	idx;
-	unsigned int	idx2;
-	unsigned int	cnt;
+	int	idx;
+	int	idx2;
+	int	cnt;
 
 	cnt = 1;
 	idx = 0;

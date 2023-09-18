@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:00:03 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/12 13:58:31 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/18 18:04:07 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ t_node	*ft_node_new(int data, t_node *prev)
 
 void	ft_set_stack(t_ps *ps)
 {
-	unsigned int	idx;
-	t_stack			*a;
-	t_node			*n;
+	int		idx;
+	t_stack	*a;
+	t_node	*n;
 
 	ps->a->cnt = ps->arg_cnt;
 	a = ps->a;
