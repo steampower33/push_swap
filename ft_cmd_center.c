@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:17:18 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/12 15:20:46 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/19 20:28:15 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,23 +35,29 @@ void	ft_cmd_push(t_ps *ps, char *cmd)
 
 void	ft_cmd_rotate(t_ps *ps, char *cmd)
 {
-	if (ft_strncmp(cmd, "ra", 2) == 0)
-		ft_rotate(ps->a, FRONT);
-	if (ft_strncmp(cmd, "rb", 2) == 0)
-		ft_rotate(ps->b, FRONT);
-	if (ft_strncmp(cmd, "rr", 2) == 0)
+	if (ft_strlen(cmd) == 2)
 	{
-		ft_rotate(ps->a, FRONT);
-		ft_rotate(ps->b, FRONT);
+		if (ft_strncmp(cmd, "ra", 2) == 0)
+			ft_rotate(ps->a, FRONT);
+		if (ft_strncmp(cmd, "rb", 2) == 0)
+			ft_rotate(ps->b, FRONT);
+		if (ft_strncmp(cmd, "rr", 2) == 0)
+		{
+			ft_rotate(ps->a, FRONT);
+			ft_rotate(ps->b, FRONT);
+		}
 	}
-	if (ft_strncmp(cmd, "rra", 3) == 0)
-		ft_rotate(ps->a, BACK);
-	if (ft_strncmp(cmd, "rrb", 3) == 0)
-		ft_rotate(ps->a, BACK);
-	if (ft_strncmp(cmd, "rrr", 3) == 0)
+	if (ft_strlen(cmd) == 3)
 	{
-		ft_rotate(ps->a, BACK);
-		ft_rotate(ps->b, BACK);
+		if (ft_strncmp(cmd, "rra", 3) == 0)
+			ft_rotate(ps->a, BACK);
+		if (ft_strncmp(cmd, "rrb", 3) == 0)
+			ft_rotate(ps->b, BACK);
+		if (ft_strncmp(cmd, "rrr", 3) == 0)
+		{
+			ft_rotate(ps->a, BACK);
+			ft_rotate(ps->b, BACK);
+		}
 	}
 }
 

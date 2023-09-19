@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:55 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/18 17:45:58 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/19 19:11:20 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 # include "libft/libft.h"
 # include "printf/ft_printf.h"
+# include <stdio.h>
 
 typedef struct s_node {
 	int				data;
 	struct s_node	*next;
-	struct s_node	*prev;
 }	t_node;
 
 typedef struct s_stack {
@@ -46,7 +46,7 @@ long long	ft_atoll(const char *str);
 
 void		ft_split_arg(int argc, char **argv, t_ps *ps);
 
-t_node		*ft_node_new(int data, t_node *prev);
+t_node		*ft_node_new(int data);
 void		ft_set_stack(t_ps *ps);
 t_node		*ft_deque(t_stack *st, enum e_where w);
 void		ft_enque(t_stack *st, enum e_where w, t_node *node);
@@ -83,4 +83,6 @@ void		ft_rr_rrr(t_ps *ps, int *a, int *b);
 void		ft_ra_rra(t_ps *ps, int a);
 void		ft_rb_rrb(t_ps *ps, int b);
 
+
+void	p(t_stack *s);
 #endif
