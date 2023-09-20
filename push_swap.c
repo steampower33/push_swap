@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:39 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/19 19:57:02 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/20 15:57:22 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,6 @@ t_ps	*ft_init(void)
 	return (ps);
 }
 
-void	p(t_stack *s)
-{
-	t_node	*n;
-
-	n = s->top;
-	while (n)
-	{
-		ft_printf("%d ", n->data);
-		n = n->next;
-	}
-	ft_printf("\n");
-}
-
 int	main(int argc, char **argv)
 {
 	t_ps	*ps;
@@ -53,7 +40,7 @@ int	main(int argc, char **argv)
 	ps = ft_init();
 	ft_cnt_num(argc, argv, ps);
 	if (ps->arg_cnt <= 1)
-		ft_error(1);
+		exit(0);
 	ft_split_arg(argc, argv, ps);
 	ft_chk_arg(ps);
 	ft_set_stack(ps);

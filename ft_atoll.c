@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 22:13:48 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/06 19:08:48 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/20 15:48:09 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ long long	ft_atoll(const char *str)
 		res = res * 10 + (str[idx] - '0');
 		idx++;
 	}
-	if (res > 2147483647 || res < -2147483647)
+	res *= minus;
+	if (res > 2147483647 || res < -2147483648)
 		ft_error(1);
 	return (res);
 }

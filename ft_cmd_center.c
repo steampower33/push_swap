@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:17:18 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/19 20:28:15 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/20 16:04:44 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,5 @@ void	ft_cmd_center(t_ps *ps, char *cmd)
 	ft_cmd_swap(ps, cmd);
 	ft_cmd_push(ps, cmd);
 	ft_cmd_rotate(ps, cmd);
-	ft_printf("%s ", cmd);
+	ft_printf("%s\n", cmd);
 }

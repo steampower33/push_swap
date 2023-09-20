@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:21:58 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/19 20:38:10 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/20 15:54:53 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,6 @@ void	ft_sort_three(t_ps *ps)
 	{
 		ft_cmd_center(ps, "sa");
 		ft_cmd_center(ps, "ra");
-	}
-	else if (fir > sec && sec > trd)
-	{
-		ft_cmd_center(ps, "sa");
-		ft_cmd_center(ps, "rra");
 	}
 }
 
