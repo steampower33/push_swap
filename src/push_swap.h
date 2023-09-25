@@ -6,15 +6,15 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:55 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/25 16:19:15 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/25 20:40:14 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
-# include "printf/ft_printf.h"
+# include "../libft/libft.h"
+# include "../printf/ft_printf.h"
 
 typedef struct s_node {
 	int				data;
