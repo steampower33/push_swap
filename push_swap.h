@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:55 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/20 15:57:17 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/25 16:19:15 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,7 @@ void		ft_rr_rrr(t_ps *ps, int *a, int *b);
 void		ft_ra_rra(t_ps *ps, int a);
 void		ft_rb_rrb(t_ps *ps, int b);
 
+int			ft_get_mid(t_ps *ps);
+void		ft_div_mid(t_ps *ps);
+void		ft_sort_five(t_ps *ps);
 #endif

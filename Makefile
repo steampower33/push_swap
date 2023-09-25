@@ -6,12 +6,12 @@
 #    By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/29 17:31:22 by seunlee2          #+#    #+#              #
-#    Updated: 2023/09/20 15:57:07 by seunlee2         ###   ########.fr        #
+#    Updated: 2023/09/25 15:48:40 by seunlee2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-SRCS = push_swap.c ft_error.c ft_atoll.c ft_split_arg.c ft_stack.c ft_cmd.c ft_utils.c ft_cmd_center.c ft_sort.c ft_div.c ft_get_ab.c ft_set_a.c ft_rotate_ab.c
+SRCS = push_swap.c ft_error.c ft_atoll.c ft_split_arg.c ft_stack.c ft_cmd.c ft_utils.c ft_cmd_center.c ft_sort.c ft_div.c ft_get_ab.c ft_set_a.c ft_rotate_ab.c ft_sort_five.c 
 OBJS = $(SRCS:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror

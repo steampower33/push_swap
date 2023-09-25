@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:21:58 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/20 15:54:53 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:41:00 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,22 @@ void	ft_sort_three(t_ps *ps)
 	fir = ps->a->top->data;
 	sec = ps->a->top->next->data;
 	trd = ps->a->top->next->next->data;
-	if (trd > fir && fir > sec)
+	if (fir > sec && sec < trd && fir < trd)
 		ft_cmd_center(ps, "sa");
-	else if (sec > fir && fir > trd)
+	else if (fir < sec && sec > trd && fir > trd)
 		ft_cmd_center(ps, "rra");
-	else if (fir > trd && trd > sec)
-		ft_cmd_center(ps, "ra");
-	else if (fir > sec && sec > trd)
+	else if (fir < sec && sec > trd && fir < trd)
+	{
+		ft_cmd_center(ps, "rra");
+		ft_cmd_center(ps, "sa");
+	}
+	else if (fir > sec && sec > trd && fir > trd)
 	{
 		ft_cmd_center(ps, "sa");
 		ft_cmd_center(ps, "rra");
 	}
-	else if (sec > trd && trd > fir)
-	{
-		ft_cmd_center(ps, "sa");
+	else if (fir > sec && sec < trd && fir > trd)
 		ft_cmd_center(ps, "ra");
-	}
 }
 
 void	ft_sort_last(t_ps *ps)

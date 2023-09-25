@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:28:31 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/19 19:44:00 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/25 14:37:57 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int	ft_set_max_next(t_ps *ps)
 		a_loc++;
 		n = n->next;
 	}
+	a_loc++;
 	if (a_loc >= (ps->a->cnt + 1) / 2)
 		a_loc = (ps->a->cnt - a_loc) * -1;
 	return (a_loc);

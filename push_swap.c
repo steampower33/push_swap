@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:39 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/20 15:57:22 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/25 16:04:29 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,25 @@ int	main(int argc, char **argv)
 {
 	t_ps	*ps;
 
+	if (argc == 1)
+		return (0);
 	ps = ft_init();
 	ft_cnt_num(argc, argv, ps);
 	if (ps->arg_cnt <= 1)
-		exit(0);
+		ft_error(1);
 	ft_split_arg(argc, argv, ps);
 	ft_chk_arg(ps);
 	ft_set_stack(ps);
-	ft_sort(ps);
+	if (ps->a->cnt == 2)
+	{
+		if (ps->a->top->data > ps->a->top->next->data)
+			ft_cmd_center(ps, "sa");
+	}
+	else if (ps->arg_cnt == 3)
+		ft_sort_three(ps);
+	else if (3 <= ps->arg_cnt && ps->arg_cnt <= 5)
+		ft_sort_five(ps);
+	else
+		ft_sort(ps);
 	return (0);
 }
