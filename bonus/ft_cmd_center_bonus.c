@@ -6,13 +6,13 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:17:18 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/25 21:53:32 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/26 21:55:16 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-void	ft_cmd_swap(t_ps *ps, char *cmd)
+static void	ft_cmd_swap(t_ps *ps, char *cmd)
 {
 	if (ft_strncmp(cmd, "sa\n", 3) == 0)
 		ft_swap(ps->a);
@@ -27,7 +27,7 @@ void	ft_cmd_swap(t_ps *ps, char *cmd)
 		ft_error(1);
 }
 
-void	ft_cmd_push(t_ps *ps, char *cmd)
+static void	ft_cmd_push(t_ps *ps, char *cmd)
 {
 	if (ft_strncmp(cmd, "pa\n", 3) == 0)
 		ft_push(ps->b, ps->a);
@@ -37,7 +37,7 @@ void	ft_cmd_push(t_ps *ps, char *cmd)
 		ft_error(1);
 }
 
-void	ft_cmd_rotate(t_ps *ps, char *cmd)
+static void	ft_cmd_rotate(t_ps *ps, char *cmd)
 {
 	if (ft_strncmp(cmd, "ra\n", 3) == 0)
 		ft_rotate(ps->a, FRONT);

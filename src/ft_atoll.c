@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 22:13:48 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/25 15:31:12 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/26 22:23:43 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,13 @@ long long	ft_atoll(const char *str)
 	long long	res;
 	int			minus;
 	int			idx;
+	int			chk;
 
 	idx = ft_isspace(str, 0);
 	idx = ft_issign(str, idx, &minus);
 	if (idx == -1)
 		ft_error(1);
+	chk = idx;
 	res = 0;
 	while (str[idx])
 	{
@@ -66,6 +68,8 @@ long long	ft_atoll(const char *str)
 		res = res * 10 + (str[idx] - '0');
 		idx++;
 	}
+	if (chk == idx)
+		ft_error(1);
 	res *= minus;
 	if (res > 2147483647 || res < -2147483648)
 		ft_error(1);

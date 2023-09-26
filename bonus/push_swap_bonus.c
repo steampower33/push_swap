@@ -6,32 +6,11 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:42:25 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/25 22:28:59 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/26 22:32:14 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
-
-t_ps	*ft_init(void)
-{
-	t_ps	*ps;
-
-	ps = (t_ps *)malloc(sizeof(t_ps));
-	if (!ps)
-		ft_error(1);
-	ps->arg_cnt = 0;
-	ps->a = (t_stack *)malloc(sizeof(t_stack));
-	ps->a->top = NULL;
-	ps->a->bottom = NULL;
-	ps->a->cnt = 0;
-	ps->b = (t_stack *)malloc(sizeof(t_stack));
-	ps->b->top = NULL;
-	ps->b->bottom = NULL;
-	ps->b->cnt = 0;
-	if (!ps->a || !ps->b)
-		ft_error(1);
-	return (ps);
-}
 
 void	ft_chk_sort(t_ps *ps)
 {
@@ -62,9 +41,9 @@ int	main(int argc, char **argv)
 		return (0);
 	ps = ft_init();
 	ft_cnt_num(argc, argv, ps);
-	if (ps->arg_cnt <= 1)
-		ft_error(1);
 	ft_split_arg(argc, argv, ps);
+	if (ps->arg_cnt == 0)
+		ft_error(1);
 	ft_chk_arg(ps);
 	ft_set_stack(ps);
 	while (1)

@@ -6,13 +6,13 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:17:18 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/25 22:04:42 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:39:15 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_cmd_swap(t_ps *ps, char *cmd)
+static void	ft_cmd_swap(t_ps *ps, char *cmd)
 {
 	if (ft_strncmp(cmd, "sa", 2) == 0)
 		ft_swap(ps->a);
@@ -25,7 +25,7 @@ void	ft_cmd_swap(t_ps *ps, char *cmd)
 	}
 }
 
-void	ft_cmd_push(t_ps *ps, char *cmd)
+static void	ft_cmd_push(t_ps *ps, char *cmd)
 {
 	if (ft_strncmp(cmd, "pa", 2) == 0)
 		ft_push(ps->b, ps->a);
@@ -33,7 +33,7 @@ void	ft_cmd_push(t_ps *ps, char *cmd)
 		ft_push(ps->a, ps->b);
 }
 
-void	ft_cmd_rotate(t_ps *ps, char *cmd)
+static void	ft_cmd_rotate(t_ps *ps, char *cmd)
 {
 	if (ft_strlen(cmd) == 2)
 	{

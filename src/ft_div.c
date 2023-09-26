@@ -6,13 +6,13 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:03:19 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/19 16:21:56 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:39:37 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_div_three_cmd(t_ps *ps, int p1, int p2)
+static void	ft_div_three_cmd(t_ps *ps, int p1, int p2)
 {
 	if (ps->a->top->data < p1)
 	{
@@ -25,7 +25,7 @@ void	ft_div_three_cmd(t_ps *ps, int p1, int p2)
 		ft_cmd_center(ps, "ra");
 }
 
-void	ft_swap_num(int *p1, int *p2)
+static void	ft_swap_num(int *p1, int *p2)
 {
 	int	tmp;
 

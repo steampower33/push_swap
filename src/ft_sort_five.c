@@ -6,13 +6,13 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:35:25 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/25 16:21:34 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/26 21:20:39 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_get_mid(t_ps *ps)
+static int	ft_get_mid(t_ps *ps)
 {
 	int	i;
 	int	j;
@@ -38,7 +38,7 @@ int	ft_get_mid(t_ps *ps)
 	return (mid);
 }
 
-void	ft_div_mid(t_ps *ps)
+static void	ft_div_mid(t_ps *ps)
 {
 	int		mid;
 	t_node	*a;

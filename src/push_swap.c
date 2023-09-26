@@ -6,32 +6,11 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:39 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/25 16:04:29 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/26 22:31:50 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_ps	*ft_init(void)
-{
-	t_ps	*ps;
-
-	ps = (t_ps *)malloc(sizeof(t_ps));
-	if (!ps)
-		ft_error(1);
-	ps->arg_cnt = 0;
-	ps->a = (t_stack *)malloc(sizeof(t_stack));
-	ps->a->top = NULL;
-	ps->a->bottom = NULL;
-	ps->a->cnt = 0;
-	ps->b = (t_stack *)malloc(sizeof(t_stack));
-	ps->b->top = NULL;
-	ps->b->bottom = NULL;
-	ps->b->cnt = 0;
-	if (!ps->a || !ps->b)
-		ft_error(1);
-	return (ps);
-}
 
 int	main(int argc, char **argv)
 {
@@ -41,9 +20,9 @@ int	main(int argc, char **argv)
 		return (0);
 	ps = ft_init();
 	ft_cnt_num(argc, argv, ps);
-	if (ps->arg_cnt <= 1)
-		ft_error(1);
 	ft_split_arg(argc, argv, ps);
+	if (ps->arg_cnt == 0)
+		ft_error(1);
 	ft_chk_arg(ps);
 	ft_set_stack(ps);
 	if (ps->a->cnt == 2)
@@ -57,5 +36,7 @@ int	main(int argc, char **argv)
 		ft_sort_five(ps);
 	else
 		ft_sort(ps);
+	// ft_all_free(ps);
+	// system("leaks push_swap");
 	return (0);
 }

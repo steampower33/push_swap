@@ -6,26 +6,13 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:31:01 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/25 21:16:30 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/26 21:55:15 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-int	ft_set_a(t_ps *ps, int data_b)
-{
-	int	a_loc;
-
-	if (data_b < ft_stack_min(ps->a))
-		a_loc = ft_set_min_prev(ps);
-	else if (data_b > ft_stack_max(ps->a))
-		a_loc = ft_set_max_next(ps);
-	else
-		a_loc = ft_set_middle(ps, data_b);
-	return (a_loc);
-}
-
-int	ft_bigger(int a, int b, int idx_a, int idx_b)
+static int	ft_bigger(int a, int b, int idx_a, int idx_b)
 {
 	if (a < 0)
 		a = a * -1;

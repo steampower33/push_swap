@@ -6,13 +6,13 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:00:03 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/25 21:16:08 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/26 21:55:23 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-t_node	*ft_node_new(int data)
+static t_node	*ft_node_new(int data)
 {
 	t_node	*s;
 
@@ -46,7 +46,7 @@ void	ft_set_stack(t_ps *ps)
 	}
 }
 
-t_node	*ft_get_last_before_node(t_stack *st, t_node *last_node)
+static t_node	*ft_get_last_before_node(t_stack *st, t_node *last_node)
 {
 	t_node	*node;
 

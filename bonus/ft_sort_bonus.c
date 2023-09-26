@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:21:58 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/25 21:16:21 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/26 21:55:27 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_sort_three(t_ps *ps)
 		ft_cmd_center(ps, "ra");
 }
 
-void	ft_sort_last(t_ps *ps)
+static void	ft_sort_last(t_ps *ps)
 {
 	int	min;
 	int	min_loc;
