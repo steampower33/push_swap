@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 13:58:39 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/26 21:55:24 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/26 22:50:07 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	ft_split_arg(int argc, char **argv, t_ps *ps)
 			res_idx++;
 			idx2++;
 		}
+		ft_free_arr2(str);
 		idx++;
 	}
 }

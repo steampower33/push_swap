@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:42:25 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/26 22:32:14 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/26 23:01:00 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int	main(int argc, char **argv)
 		if (line == NULL)
 			break ;
 		ft_cmd_center(ps, line);
+		free(line);
 	}
 	ft_chk_sort(ps);
+	ft_all_free(ps);
 }

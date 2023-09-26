@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:47:39 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/26 22:31:50 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/09/26 23:00:12 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int	main(int argc, char **argv)
 		ft_sort_five(ps);
 	else
 		ft_sort(ps);
-	// ft_all_free(ps);
-	// system("leaks push_swap");
+	ft_all_free(ps);
 	return (0);
 }
