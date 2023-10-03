@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:42:25 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/26 23:01:00 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/10/03 18:46:40 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ void	ft_chk_sort(t_ps *ps)
 	t_node	*a;
 
 	a = ps->a->top;
+	if (a == NULL)
+	{
+		ft_printf("KO\n");
+		return ;
+	}
 	while (a->next)
 	{
 		if (a->data >= a->next->data)

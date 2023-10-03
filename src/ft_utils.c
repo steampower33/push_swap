@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 12:09:59 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/26 22:50:39 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/10/03 17:40:01 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void	ft_chk_arg(t_ps *ps)
 		{
 			if (ps->arg[idx] == ps->arg[idx2])
 				ft_error(1);
-			if (idx == 0 && ps->arg[idx2 - 1] < ps->arg[idx2])
+			if (idx == 0 && (ps->arg[idx2 - 1] < ps->arg[idx2]))
 				cnt++;
 			idx2++;
 		}
