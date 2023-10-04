@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 22:13:48 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/26 22:24:09 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/10/04 21:15:53 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int	ft_isspace(const char *str, int len)
 			break ;
 		len++;
 	}
+	if (!str[len + 1])
+		ft_error(1);
 	return (len);
 }
 

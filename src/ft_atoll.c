@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 22:13:48 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/09/26 22:23:43 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/10/04 21:19:52 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_issign(const char *str, int str_len, int *minus)
 	while (str[str_len])
 	{
 		if (sign_cnt > 1)
-			return (-1);
+			ft_error(1);
 		if (str[str_len] == '-')
 		{
 			*minus = -1;
@@ -57,8 +57,6 @@ long long	ft_atoll(const char *str)
 
 	idx = ft_isspace(str, 0);
 	idx = ft_issign(str, idx, &minus);
-	if (idx == -1)
-		ft_error(1);
 	chk = idx;
 	res = 0;
 	while (str[idx])

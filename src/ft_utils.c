@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 12:09:59 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/10/03 17:40:01 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/10/04 21:21:16 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,18 @@ void	ft_cnt_num(int argc, char **argv, t_ps *ps)
 {
 	int		idx;
 	int		idx2;
+	int		split_int;
 	char	**str;
 
 	idx = 1;
 	while (idx < argc)
 	{
 		str = ft_split(argv[idx], ' ');
+		split_int = 0;
+		while (str[split_int])
+			split_int++;
+		if (split_int == 0)
+			ft_error(1);
 		idx2 = 0;
 		while (str[idx2])
 			idx2++;

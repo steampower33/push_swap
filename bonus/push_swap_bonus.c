@@ -6,7 +6,7 @@
 /*   By: seunlee2 <seunlee2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:42:25 by seunlee2          #+#    #+#             */
-/*   Updated: 2023/10/03 18:46:40 by seunlee2         ###   ########.fr       */
+/*   Updated: 2023/10/04 21:23:04 by seunlee2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ int	main(int argc, char **argv)
 	ps = ft_init();
 	ft_cnt_num(argc, argv, ps);
 	ft_split_arg(argc, argv, ps);
-	if (ps->arg_cnt == 0)
-		ft_error(1);
 	ft_chk_arg(ps);
 	ft_set_stack(ps);
 	while (1)
